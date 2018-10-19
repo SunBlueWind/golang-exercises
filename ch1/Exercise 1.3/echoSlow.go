@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"io"
 )
 
-func echoSlow() {
+func echoSlow(w io.Writer, inputs []string) {
 	s, sep := "", ""
-	for _, arg := range os.Args[1:] {
-		s += arg + sep
+	for _, arg := range inputs {
+		s += sep + arg
 		sep = " "
 	}
-	fmt.Println(s)
+	fmt.Fprintln(w, s)
 }

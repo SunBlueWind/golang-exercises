@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"io"
 	"strings"
 )
 
-func echoFast() {
-	fmt.Println(strings.Join(os.Args[1:], " "))
+func echoFast(w io.Writer, inputs []string) {
+	fmt.Fprintln(w, strings.Join(inputs, " "))
 }

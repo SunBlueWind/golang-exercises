@@ -3,14 +3,17 @@ package main
 
 import (
 	"flag"
+	"os"
 )
 
 func main() {
 	slow := flag.Bool("slow", false, "run the slower version")
+	out := os.Stdout
+	inputs := os.Args[1:]
 	flag.Parse()
 	if *slow {
-		echoSlow()
+		echoSlow(out, inputs)
 	} else {
-		echoFast()
+		echoFast(out, inputs)
 	}
 }
