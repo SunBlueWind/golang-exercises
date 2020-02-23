@@ -4,3 +4,6 @@
 !.gitignore
 !.md
 !*.png
+
+/pkg
+/bin
